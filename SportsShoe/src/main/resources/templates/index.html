@@ -49,12 +49,12 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a th:href="@{/}">Home</a></li> 
-        <li><a th:href = "@{/adminlogin}" class="btn btn-primary btn-sm mb-3"> Admin</a></li>
-        <li><a href="#">Products</a></li>
+        <li><a th:href = "@{/adminlogin}"> Admin</a></li>
+       <!--  <li><a href="#">Products</a></li>
         <li><a href="#">Deals</a></li>
         <li><a href="#">Stores</a></li>
         <li><a href="#">Contact</a></li>
-      </ul>
+ -->      </ul>
       <ul class="nav navbar-nav navbar-right">
         	<li><a  th:href="@{/customerregisteration}"><span class="glyphicon glyphicon-user"></span> Account / CheckOut</a></li>
         	<li ><a th:href="@{/showcartitems}"> <span th:text="' '+ ${#lists.size(cartlist)}" class="glyphicon glyphicon-shopping-cart" style="color:#ADFF2F; background:black" ></span> </a>  	

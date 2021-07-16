@@ -1,6 +1,9 @@
 package com.shopping.SportsShoes.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,8 +50,18 @@ public class ProductController {
 	@PostMapping("/saveProduct")
 	public String saveEmployee( @ModelAttribute("product") Product aProduct, Model aModel) {
 		
+	
+		System.out.println("Date of Expiry"+aProduct.getDateOfExpiry());
+		System.out.println("Date of Man"+aProduct.getDateofManufature());
+		
 		if ( aProduct.getManufacturedBy().isEmpty() ||
-			 aProduct.getShortName().isEmpty() 
+			 aProduct.getShortName().isEmpty() ||
+			 aProduct.getColor().isEmpty()||
+			 aProduct.getPrice() == 0.0 ||
+			 aProduct.getColor().isEmpty()||
+			 aProduct.getDateOfExpiry()==null ||
+			 aProduct.getDateofManufature()==null
+	
 		) {
 			
 			
