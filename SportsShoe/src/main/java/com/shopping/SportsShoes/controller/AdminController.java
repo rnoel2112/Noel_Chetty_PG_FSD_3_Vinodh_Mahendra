@@ -45,13 +45,13 @@ public class AdminController {
 		
 		String password = aAdmin.getPassword();
 		
-		 if(password.equals(validate.getPassword())){ 
+		 if(validate !=null && password.equals(validate.getPassword())){ 
 				aProdModel.addAttribute("listProducts",aProductService.getAllProducts());
 				aProdModel.addAttribute ("error","Welcome ");
 				return "products";
 		
 		}else {
-			aProdModel.addAttribute ("error","Wrong Password - please try again");
+			aProdModel.addAttribute ("error","Wrong credential - please try again");
 			return "adminlogin";	
 		}
 	

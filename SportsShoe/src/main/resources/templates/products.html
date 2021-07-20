@@ -71,9 +71,15 @@
 				<p th:each="category : ${product.category}">
 					 <td th:text="${category.type}"> </td>
 				 </p>
-				 <td th:text="${#dates.format(new java.util.Date(product.dateofManufature), 'dd-MMM-yy')}"></td>
-				 <td th:text="${#dates.format(new java.util.Date(product.dateOfExpiry), 'dd-MMM-yy')}"></td>	
-				<td> <a th:href="@{/updateProductForm/{id}(id=${product.id})}" class="btn btn-primary"> Update </a>
+				 
+		
+			<td th:text="${#dates.format(product.dateofManufature, 'dd.MM.yyyy')}"></td>
+			<td th:text="${#dates.format(product.dateOfExpiry, 'dd.MM.yyyy')}"></td>	
+		 	
+		 	<!-- 	<td th:text="${product.dateofManufature}"> </td>
+		 		<td th:text="${product.dateOfExpiry}"> </td>
+		  -->
+		 		<td> <a th:href="@{/updateProductForm/{id}(id=${product.id})}" class="btn btn-primary"> Update </a>
 					 <a th:href="@{/deleteProduct/{id}(id=${product.id})}" class="btn btn-danger"> Delete </a>
 				</td>
 			</tr>
